@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { Detail } from "./Detail";
+import { preload, preconnect, prefetchDNS } from "react-dom";
 
 const App = () => {
     const [isDetailsShown, setIsDetailsShown] = useState(false);
+    preload("https://zrozumiecreact.pl/dog.jpg", {
+        as: "image",
+        fetchPriority: "high",
+    });
+    preconnect("https://example.com");
+    prefetchDNS("https://example.com");
 
     return (
         <>
